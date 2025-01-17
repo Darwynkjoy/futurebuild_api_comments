@@ -9,15 +9,15 @@ class CommentsPage extends StatefulWidget{
 }
 class _commentpageState extends State<CommentsPage>{
 
-  late Future<Commentsmodelapi> futureData;
+  late Future<Commentsmodelapi?> futureData;
   
   @override
   void initState(){
     super.initState();
-    futureData= _getdata();
+    futureData= _getData();
   }
 
-  Future<Commentsmodelapi?> _getdata()async{
+  Future<Commentsmodelapi?> _getData()async{
     try{ String url="https://dummyjson.com/comments";
     http.Response res=await http.get(Uri.parse(url));
       if(res.statusCode == 200){
